@@ -53,4 +53,10 @@ public class MyRESTController {
 
     }
 
+    @GetMapping("/employees/name/{name}")
+    public List<Employee> showAllEmployeesByName(@PathVariable String name){
+        List<Employee> employees = employeeService.findAllByName(name);
+        return employees;
+    }
+
 }
